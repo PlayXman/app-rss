@@ -3,6 +3,7 @@
 namespace Rss;
 
 use Exception;
+use SimpleXMLElement;
 
 class File {
 
@@ -22,14 +23,18 @@ class File {
 	}
 
 	/**
+	 * todo
+	 *
+	 * @param $itemXml
+	 *
 	 * @throws Exception
 	 */
-	public function postNewMessage() {
-		if($xml = simplexml_load_string($this->fileContent)) {
-
-		} else {
-			throw new Exception('File isn\'t xml!');
-		}
+	public function postNewMessage($itemXml) {
+		$xml = new SimpleXMLElement($this->fileContent);
+		$xml->channel->addChild('items', $itemXml);
+		var_dump($xml);
+		die;
+		$this->createNewFile($xml->asXML());
 	}
 
 	/**
@@ -50,21 +55,25 @@ class File {
 		if ( is_file( $pathToFile ) ) {
 			$this->fileContent = file_get_contents( $pathToFile );
 		} else {
-			$this->fileContent = $this->createNewFile();
+			$content = file_get_contents( __DIR__ . '/' . self::FEED_TEMPLATE );
+			if ( $content !== false ) {
+				$this->fileContent = $this->createNewFile($content);
+			} else {
+				throw new Exception( 'Unable to read feed template!' );
+			}
 		}
 	}
 
 	/**
 	 * Creates new feed file from template.
+	 *
+	 * @param string $content
+	 *
 	 * @return string File content
 	 * @throws Exception
 	 */
-	private function createNewFile() {
+	private function createNewFile($content) {
 		if ( $file = fopen( $this->getFilePath(), 'w' ) ) {
-			$content = file_get_contents( __DIR__ . '/' . self::FEED_TEMPLATE );
-			if ( $content === false ) {
-				throw new Exception( 'Unable to read feed template!' );
-			}
 			fwrite( $file, $content );
 			fclose( $file );
 		} else {

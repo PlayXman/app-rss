@@ -1,6 +1,7 @@
 <?php
 
 namespace Rss;
+use SimpleXMLElement;
 
 /**
  * Class Feed.
@@ -58,11 +59,33 @@ class Feed {
 	}
 
 	/**
+	 * Posts new item into feed.
 	 * @throws \Exception
 	 */
 	public function post() {
 		$file = new File();
-		$file->postNewMessage();
+		$file->postNewMessage($this->createXmlItem());
+	}
+
+	/**
+	 * Creates XML item for feed.
+	 * @return SimpleXMLElement
+	 */
+	private function createXmlItem() {
+		$item = new SimpleXMLElement('<item />');
+		$item->addChild('title', $this->title);
+		$item->addChild('link', $this->link);
+		$item->addChild('description', $this->desctiption);
+		$item->addChild('pubdate', $this->pubdate);
+		if(!is_null($this->enclosure)) {
+			$img = new SimpleXMLElement('<enclosure />');
+			$img->addAttribute('src', $this->enclosure['url']);
+			$img->addAttribute('type', $this->enclosure['type']);
+			$img->addAttribute('length', $this->enclosure['size']);
+			$item->addChild( 'enclosure', $img );
+		}
+
+		return $item;
 	}
 
 }
