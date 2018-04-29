@@ -22,6 +22,17 @@ class File {
 	}
 
 	/**
+	 * @throws Exception
+	 */
+	public function postNewMessage() {
+		if($xml = simplexml_load_string($this->fileContent)) {
+
+		} else {
+			throw new Exception('File isn\'t xml!');
+		}
+	}
+
+	/**
 	 * Returns path to feed file.
 	 * @return string
 	 */

@@ -4,6 +4,7 @@
 //todo add new item
 //todo creates rss file
 
+require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/src/File.php';
 require_once __DIR__ . '/src/Feed.php';
 
