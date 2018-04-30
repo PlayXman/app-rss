@@ -1,6 +1,4 @@
 <?php
-//todo login token
-
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/models/Params.php';
 require_once __DIR__ . '/models/Token.php';
@@ -20,7 +18,7 @@ try {
 	}
 
 	//build feed
-	if ( $title = Params::getVal( 'title' ) && $description = Params::getVal( 'description' ) ) {
+	if ( ( $title = Params::getVal( 'title' ) ) && ( $description = Params::getVal( 'description' ) ) ) {
 		$feed = new Feed( $title, $description );
 
 		if ( $link = Params::getVal( 'link' ) ) {
