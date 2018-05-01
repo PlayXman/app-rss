@@ -14,9 +14,11 @@
 
 	<?php
 	require __DIR__ . '/components/form/index.php';
+	require __DIR__ . '/components/message/index.php';
 	?>
 
 	<endora>Be great.Admirals meet on flight at atlantis tower!</endora>
 
+	<script src="js/script.min.js"></script>
 </body>
 </html>

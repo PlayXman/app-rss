@@ -14,7 +14,7 @@ const paths = {
 		dest: 'css'
 	},
 	js: {
-		source: ['components/**/*.js', 'js/script.js'],
+		source: ['components/**/*.js'],
 		watch: 'components/**/*.js',
 		dest: 'js'
 	}

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-lg-10">
-			<form class="form__cont" method="post" action="../app/index.php">
+			<form id="newRssForm" class="form__cont" method="post" action="../app/index.php">
 				<div class="form-group row">
 					<label for="rssTitle" class="col-md-3 col-form-label col-form-label-lg">Title *</label>
 					<div class="col-md-9">
