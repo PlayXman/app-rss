@@ -7,17 +7,21 @@ var icons = {
 	}
 };
 
-var Message = function (type, text) {
+var Message = function () {
 
-	this.el = document.createElement(`<div class="message__box">
-	<i class="message__icon message__icon--${type}">${icons[type].icon}</i> ${text}
-</div>`);
+	this.loaderEl = document.getElementsByClassName('message__loader')[0];
+	this.messageEl = document.getElementsByClassName('message__box')[0];
 
-	this.render = function () {
+	this.startLoader = function () {
+		this.loaderEl.classList.add('show');
+	};
+
+	this.showMessage = function (type, text) {
 		var t = this;
-		var cont = document.getElementById('message_container');
 
-		cont.appendChild(t.el);
+		var icon = this.messageEl.getElementsByClassName('message__icon');
+		icon.classList.remove('message__icon--error').remove('message__icon--success').add(`message__icon--${type}`);
+		icon.innerHTML = icons[type];
 
 		setTimeout(function () {
 			cont.removeChild(t.el);

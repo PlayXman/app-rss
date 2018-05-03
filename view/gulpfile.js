@@ -31,7 +31,7 @@ gulp.task('css:dev', function () {
 });
 
 gulp.task('css:build', function () {
-	del('css/style.min.css.map');
+	del(`${paths.css.dest}/style.min.css.map`);
 	return gulp.src(paths.css.source)
 		.pipe(less())
 		.pipe(cleanCss())
@@ -47,7 +47,7 @@ gulp.task('js:dev', function () {
 });
 
 gulp.task('js:build', function () {
-	del('js/script.min.js.map');
+	del(`${paths.js.dest}/script.min.js.map`);
 	return gulp.src(paths.js.source)
 	    .pipe(concat('script.min.js'))
 	    .pipe(uglify())
