@@ -19,7 +19,7 @@ class Feed {
 	];
 
 	private $title;
-	private $link = DEFAULT_LINK;
+	private $link = HOME_LINK;
 	private $desctiption;
 	private $enclosure;
 	private $pubdate;

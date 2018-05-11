@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Rss</title>
 
-	<link href="css/style.css" rel="stylesheet">
+	<link href="/view/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -19,6 +19,6 @@
 
 	<endora>Be great.Admirals meet on flight at atlantis tower!</endora>
 
-	<script src="js/script.min.js"></script>
+	<script src="/view/js/script.min.js"></script>
 </body>
 </html>
