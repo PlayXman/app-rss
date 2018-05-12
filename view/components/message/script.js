@@ -14,14 +14,25 @@ var Message = function () {
 	this.loaderEl = document.getElementsByClassName('message__loader')[0];
 	this.messageEl = document.getElementsByClassName('message__box')[0];
 
+	/**
+	 * Shows loader
+	 */
 	this.startLoader = function () {
 		this.loaderEl.classList.add(showClass);
 	};
 
+	/**
+	 * Hides loader
+	 */
 	this.stopLoader = function () {
 		this.loaderEl.classList.remove(showClass);
 	};
 
+	/**
+	 * Shows info message
+	 * @param {string} type [success, error]
+	 * @param {string} text Text to show
+	 */
 	this.showMessage = function (type, text) {
 		var t = this;
 

@@ -43,6 +43,7 @@ class Params {
 
 	/**
 	 * Returns value of post param.
+	 *
 	 * @param string $name
 	 *
 	 * @return mixed|null Null if not set and not required
@@ -50,7 +51,7 @@ class Params {
 	 */
 	public static function getVal( $name ) {
 		if ( isset( self::$vars[ $name ] ) ) {
-			$var   = self::$vars[ $name ];
+			$var = self::$vars[ $name ];
 			$param = filter_input( INPUT_POST, $name, $var['filter'] );
 
 			if ( ! is_null( $param ) ) { //isset

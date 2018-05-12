@@ -18,7 +18,7 @@ class File {
 	const MAX_FEED_NUMBER = 10;
 
 	/** @var SimpleXMLElement[] */
-	private $fileItems;
+	private $fileItems = [];
 
 	/** @var SimpleXMLElement */
 	private $fileTemplate;
@@ -40,7 +40,7 @@ class File {
 	 * @throws Exception
 	 */
 	public function postNewMessage( SimpleXMLElement $itemXml ) {
-		$xml  = new SimpleXMLElement( $this->fileTemplate );
+		$xml = new SimpleXMLElement( $this->fileTemplate );
 		$root = dom_import_simplexml( $xml->channel );
 
 		//new one
@@ -68,16 +68,14 @@ class File {
 
 	/**
 	 * Gets actual feed content.
-	 * @throws Exception
 	 */
 	private function setFileContent() {
 		$pathToFile = $this->getFilePath();
 
-		$content = file_get_contents( $pathToFile );
-		if ( $content !== false ) {
-			$xml   = new SimpleXMLElement( $content );
+		if ( is_readable( $pathToFile ) && ( $content = file_get_contents( $pathToFile ) ) !== false ) {
+			$xml = new SimpleXMLElement( $content );
 			$items = [];
-			$i     = 1;
+			$i = 1;
 			foreach ( $xml->channel->item as $item ) {
 				$items[] = $item;
 				if ( ++ $i > self::MAX_FEED_NUMBER - 1 ) {
@@ -85,8 +83,6 @@ class File {
 				}
 			}
 			$this->fileItems = $items;
-		} else {
-			throw new Exception( 'Unable to read feed content!' );
 		}
 	}
 

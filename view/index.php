@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/../config.php';
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,8 +11,7 @@
 
 	<link href="/view/css/style.css" rel="stylesheet">
 </head>
-<body>
-
+<body data-seed="<?php echo APP_LOGIN_SEED; ?>">
 	<h1 class="container text-center">Rss</h1>
 
 	<?php
