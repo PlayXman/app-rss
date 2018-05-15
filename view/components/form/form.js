@@ -10,14 +10,16 @@ var Form = function () {
 		var formData = new FormData(this.form);
 		var toDelete = [];
 
-		for (var input of formData.entries()) {
+		var inputs = Array.from(formData.entries());
+		inputs.forEach(function (input) {
 			if (input[1].length === 0) {
 				toDelete.push(input[0]);
 			}
-		}
-		for (var del of toDelete) {
+		});
+		toDelete.forEach(function (del) {
 			formData.delete(del);
-		}
+		});
+
 		formData.append('token', Token.get());
 
 		return formData;

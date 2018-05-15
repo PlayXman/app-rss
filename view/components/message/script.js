@@ -38,7 +38,7 @@ var Message = function () {
 
 		t.messageEl.classList.remove('message__box--error');
 		t.messageEl.classList.remove('message__box--success');
-		t.messageEl.classList.add(`message__box--${type}`);
+		t.messageEl.classList.add('message__box--' + type);
 		t.messageEl.getElementsByClassName('message__icon')[0].innerHTML = icons[type].icon;
 		t.messageEl.getElementsByClassName('message__text')[0].innerHTML = text;
 
