@@ -9,7 +9,7 @@ require_once __DIR__ . '/../config.php';
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Rss</title>
 
-	<link href="/view/css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
 <body data-seed="<?php echo APP_LOGIN_SEED; ?>">
 	<h1 class="container text-center">Rss</h1>
@@ -21,6 +21,6 @@ require_once __DIR__ . '/../config.php';
 
 	<endora>Be great.Admirals meet on flight at atlantis tower!</endora>
 
-	<script src="/view/js/script.min.js"></script>
+	<script src="js/script.min.js"></script>
 </body>
 </html>
