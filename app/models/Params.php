@@ -16,12 +16,12 @@ class Params {
 	private static $vars = [
 		'token'       => [
 			'required' => true,
-			'filter'   => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+			'filter'   => FILTER_SANITIZE_SPECIAL_CHARS,
 			'error'    => 'Fill authentication param!'
 		],
 		'title'       => [
 			'required' => true,
-			'filter'   => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+			'filter'   => FILTER_SANITIZE_SPECIAL_CHARS,
 			'error'    => 'Fill required param "title"!'
 		],
 		'link'        => [
@@ -31,7 +31,7 @@ class Params {
 		],
 		'description' => [
 			'required' => true,
-			'filter'   => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+			'filter'   => FILTER_SANITIZE_SPECIAL_CHARS,
 			'error'    => 'Fill required param "description"!'
 		],
 		'enclosure'   => [
