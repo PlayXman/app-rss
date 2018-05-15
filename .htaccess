@@ -1,0 +1,6 @@
+# Hide the contents of directories
+IndexIgnore *
+
+<Files config.php>
+deny from all
+</Files>
