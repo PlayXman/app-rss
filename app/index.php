@@ -25,7 +25,7 @@ try {
 			$feed->setLink( $link );
 		}
 		if ( $enclosure = Params::getVal( 'enclosure' ) ) {
-			$feed->setEnclosure( $enclosure, 'jpg', 2000 );
+			$feed->setEnclosure( $enclosure, 'jpg', 2000 );//todo dodelat
 		}
 
 		$feed->post();

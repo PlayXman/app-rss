@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
+		<atom:link href="http://graphic.4fan.cz/rss/feed/feed.xml" rel="self" type="application/rss+xml" />
 		<title>For Gigi</title>
 		<link>http://graphic.4fan.cz</link>
 		<description>Messages for Gigi</description>
