@@ -32,7 +32,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text">🌍</div>
 							</div>
-							<input type="url" class="form-control form-control-sm" id="rssImage" name="enclosure" placeholder="http://image.com/picture.jpg">
+							<input type="url" class="form-control form-control-sm" id="rssImage" name="image" placeholder="http://image.com/picture.jpg">
 						</div>
 					</div>
 				</div>

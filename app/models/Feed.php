@@ -11,19 +11,11 @@ use SimpleXMLElement;
  */
 class Feed {
 
-	private static $mediaTypes = [
-		'jpg' => 'image/jpeg',
-		'png' => 'image/png',
-		'gif' => 'image/gif',
-		'avi' => 'video/avi',
-		'mp4' => 'video/mp4'
-	];
-
 	private $title;
-	private $link = HOME_LINK;
-	private $desctiption;
-	private $enclosure;
-	private $pubdate;
+	private $link;
+	private $description;
+	private $image;
+	private $pubDate;
 
 	/**
 	 * Feed constructor.
@@ -33,8 +25,10 @@ class Feed {
 	 */
 	public function __construct( $title, $description ) {
 		$this->title       = $title;
-		$this->desctiption = $description;
-		$this->pubdate     = date( 'r' );
+		$this->description = $description;
+		$this->pubDate     = date( 'r' );
+		$this->link        = HOME_LINK;
+		$this->image       = '';
 	}
 
 	/**
@@ -49,16 +43,10 @@ class Feed {
 	/**
 	 * Set link to media file.
 	 *
-	 * @param string $url  Link to file
-	 * @param string $type Media type (jpg, png, gif, avi, mp4)
-	 * @param int    $size File size in bytes
+	 * @param string $url Link to file
 	 */
-	public function setEnclosure( $url, $type, $size ) {
-		$this->enclosure = [
-			'url'  => $url,
-			'type' => self::$mediaTypes[ $type ],
-			'size' => $size
-		];
+	public function setImage( $url ) {
+		$this->image = " <img src=\"${url}\" width=\"200\" />";
 	}
 
 	/**
@@ -75,20 +63,27 @@ class Feed {
 	 * @return SimpleXMLElement
 	 */
 	private function createXmlItem() {
-		$item = new SimpleXMLElement( '<item />' );
+		$item = new SimpleXMLElement( '<item />', LIBXML_NOCDATA );
 		$item->addChild( 'title', $this->title );
-		$item->addChild( 'guid', sprintf('%s?t=%s', $this->link, date('YmdHis')) );
+		$item->addChild( 'guid', sprintf( '%s?t=%s', $this->link, date( 'YmdHis' ) ) );
 		$item->addChild( 'link', $this->link );
-		$item->addChild( 'description', htmlspecialchars( $this->desctiption ) );
-		$item->addChild( 'pubDate', $this->pubdate );
-		if ( ! is_null( $this->enclosure ) ) {
-			$img = $item->addChild( 'enclosure' );
-			$img->addAttribute( 'url', $this->enclosure['url'] );
-			$img->addAttribute( 'type', $this->enclosure['type'] );
-			$img->addAttribute( 'length', $this->enclosure['size'] );
-		}
+		$description = $item->addChild( 'description' );
+		$this->addCData( $description, html_entity_decode( $this->description ) . $this->image );
+		$item->addChild( 'pubDate', $this->pubDate );
 
 		return $item;
+	}
+
+	/**
+	 * Creates CDATA section in SimpleXMLElement node.
+	 *
+	 * @param SimpleXMLElement $sXmlElem
+	 * @param string           $cdata_text Text in CDATA tag
+	 */
+	private function addCData( $sXmlElem, $cdata_text ) {
+		$node = dom_import_simplexml( $sXmlElem );
+		$no   = $node->ownerDocument;
+		$node->appendChild( $no->createCDATASection( $cdata_text ) );
 	}
 
 }

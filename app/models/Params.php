@@ -34,10 +34,10 @@ class Params {
 			'filter'   => FILTER_SANITIZE_SPECIAL_CHARS,
 			'error'    => 'Fill required param "description"!'
 		],
-		'enclosure'   => [
+		'image'       => [
 			'required' => false,
 			'filter'   => FILTER_VALIDATE_URL,
-			'error'    => 'Wrong "enclosure" format. Must be URL!'
+			'error'    => 'Wrong "image" format. Must be URL!'
 		]
 	];
 
@@ -51,7 +51,7 @@ class Params {
 	 */
 	public static function getVal( $name ) {
 		if ( isset( self::$vars[ $name ] ) ) {
-			$var = self::$vars[ $name ];
+			$var   = self::$vars[ $name ];
 			$param = filter_input( INPUT_POST, $name, $var['filter'] );
 
 			if ( ! is_null( $param ) ) { //isset
