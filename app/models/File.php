@@ -2,6 +2,7 @@
 
 namespace Rss;
 
+use DOMDocument;
 use Exception;
 use SimpleXMLElement;
 
@@ -40,7 +41,7 @@ class File {
 	 * @throws Exception
 	 */
 	public function postNewMessage( SimpleXMLElement $itemXml ) {
-		$xml = new SimpleXMLElement( $this->fileTemplate );
+		$xml  = new SimpleXMLElement( $this->fileTemplate );
 		$root = dom_import_simplexml( $xml->channel );
 
 		//new one
@@ -55,7 +56,13 @@ class File {
 			$root->appendChild( $item );
 		}
 
-		$this->createNewFile( $xml->asXML() );
+		//format xml
+		$dom                     = new DOMDocument();
+		$dom->preserveWhiteSpace = false;
+		$dom->formatOutput       = true;
+		$dom->loadXML( $root->ownerDocument->saveXML() );
+
+		$this->createNewFile( $dom->saveXML() );
 	}
 
 	/**
@@ -73,9 +80,9 @@ class File {
 		$pathToFile = $this->getFilePath();
 
 		if ( is_readable( $pathToFile ) && ( $content = file_get_contents( $pathToFile ) ) !== false ) {
-			$xml = new SimpleXMLElement( $content );
+			$xml   = new SimpleXMLElement( $content );
 			$items = [];
-			$i = 1;
+			$i     = 1;
 			foreach ( $xml->channel->item as $item ) {
 				$items[] = $item;
 				if ( ++ $i > self::MAX_FEED_NUMBER - 1 ) {
