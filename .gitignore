@@ -2,5 +2,5 @@
 node_modules
 
 /feed/feed.xml
-/view/css
-/view/js
+/view/dist
+/view/style-bundle.js
