@@ -1,52 +1,39 @@
-<form id="newRssForm" method="post" action="../app/index.php">
+<form id="newRssForm" method="post" action="../app/index.php" class="form mdc-elevation--z8">
 	<div class="text-field-row">
 		<div class="text-field-container">
-			<div class="mdc-text-field">
-				<input id="rssTitle" type="text" class="mdc-text-field__input" required>
+			<div class="mdc-text-field mdc-text-field--box">
+				<input id="rssTitle" type="text" class="mdc-text-field__input" name="title" required>
 				<label class="mdc-floating-label" for="rssTitle">Title</label>
 				<div class="mdc-line-ripple"></div>
 			</div>
 		</div>
 	</div>
-
-
-<!--	<div class="form-group row">-->
-<!--		<label for="rssTitle" class="col-md-3 col-form-label col-form-label-lg">Title *</label>-->
-<!--		<div class="col-md-9">-->
-<!--			<input type="text" class="form-control form-control-lg" id="rssTitle" name="title" required>-->
-<!--		</div>-->
-<!--	</div>-->
-	<div class="form-group row">
-		<label for="rssDescription" class="col-md-3 col-form-label col-form-label-lg">Description *</label>
-		<div class="col-md-9">
-			<textarea type="text" class="form-control" id="rssDescription" rows="3" name="description" required></textarea>
-		</div>
-	</div>
-	<div class="form-group row">
-		<label for="rssLink" class="col-md-3 col-form-label col-form-label-sm">Link</label>
-		<div class="col-md-9">
-			<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text">🌍</div>
-				</div>
-				<input type="url" class="form-control form-control-sm" id="rssLink" name="link" placeholder="http://example.com">
+	<div class="text-field-row">
+		<div class="text-field-container">
+			<div class="mdc-text-field mdc-text-field--textarea">
+				<textarea id="rssDescription" class="mdc-text-field__input" rows="3" name="description" required></textarea>
+				<label class="mdc-floating-label" for="rssDescription">Description</label>
 			</div>
 		</div>
 	</div>
-	<div class="form-group row">
-		<label for="rssImage" class="col-md-3 col-form-label col-form-label-sm">Image</label>
-		<div class="col-md-9">
-			<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text">🌍</div>
-				</div>
-				<input type="url" class="form-control form-control-sm" id="rssImage" name="image" placeholder="http://image.com/picture.jpg">
-			</div>
+	<div class="text-field-container">
+		<div class="mdc-text-field mdc-text-field--box mdc-text-field--with-leading-icon">
+			<i class="material-icons mdc-text-field__icon">insert_link</i><input id="rssLink" class="mdc-text-field__input" type="url" name="link">
+			<label class="mdc-floating-label" for="rssLink">Link</label>
+			<div class="mdc-line-ripple"></div>
 		</div>
+		<p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Eg. http://example.com</p>
+	</div>
+	<div class="text-field-container">
+		<div class="mdc-text-field mdc-text-field--box mdc-text-field--with-leading-icon">
+			<i class="material-icons mdc-text-field__icon">photo</i><input id="rssImage" class="mdc-text-field__input" type="url" name="image">
+			<label class="mdc-floating-label" for="rssImage">Image</label>
+			<div class="mdc-line-ripple"></div>
+		</div>
+		<p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Eg. http://image.com/picture.jpg</p>
 	</div>
 
-	<button type="submit" class="btn btn-primary">Post</button>
+	<div class="form__button-cont">
+		<button type="submit" class="mdc-button mdc-button--raised">Post</button>
+	</div>
 </form>
-
-
-

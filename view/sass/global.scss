@@ -3,18 +3,15 @@ html, body {
 }
 
 body {
-	background: @color-white;
-}
-
-h1 {
-	color: @color-orange;
+	margin: 0;
+	background: $color-white;
 }
 
 endora {
 	padding: 15px;
 	margin-top: 15px;
 	text-align: center;
-	border-top: 1px solid @color-gray;
+	border-top: 1px solid $color-gray;
 	display: block;
-	color: @color-gray;
+	color: $color-gray;
 }

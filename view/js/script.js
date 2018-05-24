@@ -1,2 +1,1 @@
-import {Material} from "../components/material-design/script";
-Material.init();
+import '../components/form/script';

@@ -31,7 +31,7 @@ try {
 		$feed->post();
 	}
 
-	echo Response::success( 'true' );
+	echo Response::success( 'Success 😊' );
 } catch ( Exception $e ) {
 	echo Response::error( $e->getMessage() );
 }

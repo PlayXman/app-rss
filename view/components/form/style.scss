@@ -1,0 +1,19 @@
+@import "~@material/textfield/mdc-text-field";
+@import "~@material/button/mdc-button";
+@import "~@material/elevation/mdc-elevation";
+
+.mdc-text-field {
+	width: 100%;
+}
+
+.mdc-text-field--textarea {
+
+}
+
+.form {
+	padding: 4%;
+
+	&__button-cont {
+		margin-top: 2.5em;
+	}
+}

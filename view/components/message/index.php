@@ -1,8 +1,6 @@
-<div class="message__container">
-	<div class="message__loader">
-		<i class="message__loader-icon"></i> Loading...
-	</div>
-	<div class="message__box">
-		<i class="message__icon"></i> <span class="message__text"></span>
+<div class="mdc-snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+	<div class="mdc-snackbar__text"></div>
+	<div class="mdc-snackbar__action-wrapper">
+		<button type="button" class="mdc-snackbar__action-button"></button>
 	</div>
 </div>

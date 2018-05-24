@@ -10,6 +10,7 @@ require_once __DIR__ . '/../config.php';
 	<title>Rss</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="http://localhost:8080/dist/css/style.css" rel="stylesheet"><!--TODO localhost-->
 </head>
 <body class="mdc-typography" data-seed="<?php echo APP_LOGIN_SEED; ?>">
@@ -26,7 +27,7 @@ require_once __DIR__ . '/../config.php';
 	</div>
 
 	<?php
-//	require __DIR__ . '/components/snackbar/index.php';
+	require __DIR__ . '/components/message/index.php';
 	?>
 
 	<endora>Be great.Admirals meet on flight at atlantis tower!</endora>

@@ -1,18 +1,28 @@
 import {Token} from "../token/script";
+import {Message} from "../message/script";
 
-var Form = function () {
-	this.form = document.getElementById('newRssForm');
+/**
+ * Form handling
+ */
+class Form {
+
+	/**
+	 * Constructor
+	 */
+	constructor() {
+		this.formEl = document.getElementById('newRssForm');
+	}
 
 	/**
 	 * Gets and sets form data
 	 * @private
 	 * @return {FormData}
 	 */
-	this.getData = function () {
-		var formData = new FormData(this.form);
-		var toDelete = [];
+	getData() {
+		let formData = new FormData(this.formEl);
+		let toDelete = [];
 
-		var inputs = Array.from(formData.entries());
+		let inputs = Array.from(formData.entries());
 		inputs.forEach(function (input) {
 			if (input[1].length === 0) {
 				toDelete.push(input[0]);
@@ -31,21 +41,21 @@ var Form = function () {
 	 * Makes AJAX call to server
 	 * @public
 	 */
-	this.fetch = function () {
-		var t = this;
-		var m = new Message();
-		m.startLoader();
+	fetch() {
+		const t = this;
+		//m.startLoader();todo
 
-		fetch(t.form.action, {
+		fetch(t.formEl.action, {
 			method: 'post',
 			body: t.getData()
 		}).then(function (response) {
 			return response.json();
 		}).then(function (data) {
-			m.stopLoader();
-			m.showMessage(data.status, data.text);
+			//m.stopLoader();todo
+			Message.show(data.text);
 		});
 	}
-};
+
+}
 
 export {Form};

@@ -7,4 +7,13 @@
 //@import "../components/message/style";
 
 @import "variables";
-@import "../components/material-design/style";
+@import "global";
+
+//Material design
+@import "~@material/theme/mdc-theme";
+@import "~@material/typography/mdc-typography";
+@import "~@material/layout-grid/mdc-layout-grid";
+@import "~@material/snackbar/mdc-snackbar";
+
+//Components
+@import "../components/form/style";
