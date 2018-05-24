@@ -1,6 +1,6 @@
 module.exports = [
 	{
-		entry: './sass/style.scss',
+		entry: './src/sass/style.scss',
 		output: {
 			filename: 'style-bundle.js',
 		},
@@ -26,7 +26,7 @@ module.exports = [
 			}]
 		},
 	}, {
-		entry: "./js/script.js",
+		entry: "./src/js/script.js",
 		output: {
 			filename: "./dist/js/script.js"
 		},
