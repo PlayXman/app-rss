@@ -7,7 +7,27 @@
 }
 
 .mdc-text-field--textarea {
+	border: none;
+	border-radius: 0;
 
+	textarea {
+		border: none !important;
+		border-bottom: 1px solid $mdc-text-field-bottom-line-idle !important;
+	}
+
+	&.mdc-text-field--invalid {
+		textarea {
+			border-color: $mdc-text-field-error !important;
+		}
+	}
+
+	.mdc-floating-label {
+		background: $mdc-text-field-box-background;
+
+		&.mdc-floating-label--float-above {
+			background: $mdc-text-field-box-background;
+		}
+	}
 }
 
 .form {

@@ -10,9 +10,10 @@
 	</div>
 	<div class="text-field-row">
 		<div class="text-field-container">
-			<div class="mdc-text-field mdc-text-field--textarea">
+			<div class="mdc-text-field mdc-text-field--textarea mdc-text-field--box">
 				<textarea id="rssDescription" class="mdc-text-field__input" rows="3" name="description" required></textarea>
 				<label class="mdc-floating-label" for="rssDescription">Description</label>
+				<div class="mdc-line-ripple"></div>
 			</div>
 		</div>
 	</div>

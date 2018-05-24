@@ -14,16 +14,12 @@ require_once __DIR__ . '/../config.php';
 	<link href="http://localhost:8080/dist/css/style.css" rel="stylesheet"><!--TODO localhost-->
 </head>
 <body class="mdc-typography" data-seed="<?php echo APP_LOGIN_SEED; ?>">
-	<div class="mdc-layout-grid">
-		<div class="mdc-layout-grid__inner">
-			<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-				<h1 class="mdc-typography--headline3">Rss</h1>
+	<div class="container">
+		<h1 class="mdc-typography--headline3">Rss</h1>
 
-				<?php
-				require __DIR__ . '/components/form/index.php';
-				?>
-			</div>
-		</div>
+		<?php
+		require __DIR__ . '/components/form/index.php';
+		?>
 	</div>
 
 	<?php

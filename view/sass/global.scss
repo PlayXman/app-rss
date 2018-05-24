@@ -15,3 +15,9 @@ endora {
 	display: block;
 	color: $color-gray;
 }
+
+.container {
+	margin: 0 auto 2em;
+	max-width: $container-max-width;
+	padding: 0 15px;
+}
