@@ -1,3 +1,5 @@
+import {Token} from "../token/script";
+
 var Form = function () {
 	this.form = document.getElementById('newRssForm');
 
@@ -45,3 +47,5 @@ var Form = function () {
 		});
 	}
 };
+
+export {Form};

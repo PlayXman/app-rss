@@ -1,3 +1,5 @@
+import {Form} from "./form";
+
 (function () {
 	var form = new Form();
 
@@ -7,6 +9,3 @@
 		return false;
 	};
 })();
-
-import {MDCTextField} from '@material/textfield';
-const textField = new MDCTextField(document.querySelector('.mdc-text-field'));

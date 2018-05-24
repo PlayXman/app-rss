@@ -1,6 +1,7 @@
 .idea
-node_modules
 
 /feed/feed.xml
+
+node_modules
 /view/dist
 /view/style-bundle.js

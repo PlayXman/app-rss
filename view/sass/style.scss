@@ -6,9 +6,5 @@
 //@import "../components/form/style";
 //@import "../components/message/style";
 
-@import "~@material/theme/mdc-theme";
-@import "~@material/typography/mdc-typography";
-@import "~@material/layout-grid/mdc-layout-grid";
-@import "~@material/textfield/mdc-text-field";
-
 @import "variables";
+@import "../components/material-design/style";

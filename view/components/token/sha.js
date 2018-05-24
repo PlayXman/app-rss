@@ -167,3 +167,5 @@ var Sha = function (msg) {
 	};
 
 };
+
+export {Sha};

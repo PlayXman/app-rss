@@ -1,3 +1,5 @@
+import {Sha} from "./sha";
+
 var Token = {
 	formatDate: function (number) {
 		return (number < 10 ? '0' : '') + number;
@@ -11,3 +13,5 @@ var Token = {
 		return sha.get();
 	}
 };
+
+export {Token};

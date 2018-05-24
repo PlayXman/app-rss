@@ -26,7 +26,7 @@ module.exports = [
 			}]
 		},
 	}, {
-		entry: "./js/app.js",
+		entry: "./js/script.js",
 		output: {
 			filename: "./dist/js/script.js"
 		},
