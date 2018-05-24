@@ -3,5 +3,5 @@
 /feed/feed.xml
 
 node_modules
-/view/dist
+/view/dist/
 /view/style-bundle.js
