@@ -44,7 +44,7 @@ class Form {
 	fetch() {
 		const t = this;
 		//m.startLoader();todo
-
+		
 		fetch(t.formEl.action, {
 			method: 'post',
 			body: t.getData()

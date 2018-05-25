@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/src/components/env/Env.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,23 +12,23 @@ require_once __DIR__ . '/../config.php';
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="http://localhost:8080/dist/css/style.css" rel="stylesheet"><!--TODO localhost-->
+	<link href="<?php echo \Rss\Env::getDomain(); ?>dist/css/style.css" rel="stylesheet">
 </head>
 <body class="mdc-typography" data-seed="<?php echo APP_LOGIN_SEED; ?>">
 	<div class="container">
 		<h1 class="mdc-typography--headline3">Rss</h1>
 
 		<?php
-		require __DIR__ . '/components/form/index.php';
+		require __DIR__ . '/src/components/form/index.php';
 		?>
 	</div>
 
 	<?php
-	require __DIR__ . '/components/message/index.php';
+	require __DIR__ . '/src/components/message/index.php';
 	?>
 
-	<endora>Be great.Admirals meet on flight at atlantis tower!</endora>
+	<endora>Be great. Admirals meet on flight at atlantis tower!</endora>
 
-	<script src="http://localhost:8080/dist/js/script.js"></script><!--TODO localhost-->
+	<script src="<?php echo \Rss\Env::getDomain(); ?>dist/js/script.js"></script>
 </body>
 </html>

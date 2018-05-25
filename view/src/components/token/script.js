@@ -23,7 +23,7 @@ class Token {
 	static get() {
 		const seed = document.body.dataset.seed;
 		const date = new Date();
-		const sha = new Sha(seed + this.constructor.formatDate(date.getFullYear()) + this.constructor.formatDate(date.getMonth() + 1) + this.constructor.formatDate(date.getDate()) + this.constructor.formatDate(date.getHours()));
+		const sha = new Sha(seed + this.formatDate(date.getFullYear()) + this.formatDate(date.getMonth() + 1) + this.formatDate(date.getDate()) + this.formatDate(date.getHours()));
 
 		return sha.get();
 	}
