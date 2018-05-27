@@ -10,6 +10,10 @@ require_once __DIR__ . '/src/components/env/Env.php';
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Rss</title>
 
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../favicon-32x32.png" type="image/png" sizes="32x32">
+	<meta name="theme-color" content="#ffffff">
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="<?php echo \Rss\Env::getDomain(); ?>dist/css/style.css" rel="stylesheet">
