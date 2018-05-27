@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/src/components/env/Env.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -9,18 +10,30 @@ require_once __DIR__ . '/../config.php';
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Rss</title>
 
-	<link href="css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../favicon-32x32.png" type="image/png" sizes="32x32">
+	<meta name="theme-color" content="#ffffff">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="<?php echo \Rss\Env::getDomain(); ?>dist/css/style.css" rel="stylesheet">
 </head>
-<body data-seed="<?php echo APP_LOGIN_SEED; ?>">
-	<h1 class="container text-center">Rss</h1>
+<body class="mdc-typography" data-seed="<?php echo APP_LOGIN_SEED; ?>">
+	<div class="container">
+		<h1 class="mdc-typography--headline3">Rss</h1>
+
+		<?php
+		require __DIR__ . '/src/components/form/index.php';
+		?>
+	</div>
 
 	<?php
-	require __DIR__ . '/components/form/index.php';
-	require __DIR__ . '/components/message/index.php';
+	require __DIR__ . '/src/components/message/index.php';
+	require __DIR__ . '/src/components/loader/index.php';
 	?>
 
-	<endora>Be great.Admirals meet on flight at atlantis tower!</endora>
+	<endora>Be great. Admirals meet on flight at atlantis tower!</endora>
 
-	<script src="js/script.min.js"></script>
+	<script src="<?php echo \Rss\Env::getDomain(); ?>dist/js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+@import "~@material/textfield/mdc-text-field";
+@import "~@material/button/mdc-button";
+@import "~@material/elevation/mdc-elevation";
+
+.mdc-text-field {
+	width: 100%;
+}
+
+.mdc-text-field--textarea {
+	border: none;
+	border-radius: 0;
+
+	textarea {
+		border: none !important;
+		border-bottom: 1px solid $mdc-text-field-bottom-line-idle !important;
+	}
+
+	&.mdc-text-field--invalid {
+		textarea {
+			border-color: $mdc-text-field-error !important;
+		}
+	}
+
+	.mdc-floating-label {
+		background: $mdc-text-field-box-background;
+
+		&.mdc-floating-label--float-above {
+			background: $mdc-text-field-box-background;
+		}
+	}
+}
+
+.form {
+	padding: 4%;
+
+	&__button-cont {
+		margin-top: 2.5em;
+	}
+}
