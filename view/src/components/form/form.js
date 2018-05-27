@@ -1,5 +1,6 @@
 import {Token} from "../token/script";
 import {Message} from "../message/script";
+import {Loader} from "../loader/script";
 
 /**
  * Form handling
@@ -43,15 +44,17 @@ class Form {
 	 */
 	fetch() {
 		const t = this;
-		//m.startLoader();todo
-		
+		const l = new Loader();
+
+		l.show();
+
 		fetch(t.formEl.action, {
 			method: 'post',
 			body: t.getData()
 		}).then(function (response) {
 			return response.json();
 		}).then(function (data) {
-			//m.stopLoader();todo
+			l.hide();
 			Message.show(data.text);
 		});
 	}

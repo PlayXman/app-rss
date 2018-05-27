@@ -29,6 +29,7 @@ require_once __DIR__ . '/src/components/env/Env.php';
 
 	<?php
 	require __DIR__ . '/src/components/message/index.php';
+	require __DIR__ . '/src/components/loader/index.php';
 	?>
 
 	<endora>Be great. Admirals meet on flight at atlantis tower!</endora>
