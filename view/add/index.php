@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/src/components/env/Env.php';
 ?>
 <!doctype html>
@@ -12,7 +12,7 @@ require_once __DIR__ . '/src/components/env/Env.php';
 
 	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 	<link rel="icon" href="../favicon-32x32.png" type="image/png" sizes="32x32">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#807ca5">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

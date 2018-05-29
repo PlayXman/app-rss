@@ -1,4 +1,4 @@
-<form id="newRssForm" method="post" action="../app/index.php" class="form mdc-elevation--z8">
+<form id="newRssForm" method="post" action="../../app/index.php" class="form mdc-elevation--z8">
 	<div class="text-field-row">
 		<div class="text-field-container">
 			<div class="mdc-text-field mdc-text-field--box">
