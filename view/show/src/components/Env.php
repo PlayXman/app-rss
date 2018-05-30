@@ -1,13 +1,13 @@
 <?php
 
-namespace Rss\Add;
+namespace Rss\Show;
 
 /**
  * Class Env
  *
  * Sets env.
  *
- * @package Rss\Add
+ * @package Rss\Show
  */
 class Env {
 
