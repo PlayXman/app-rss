@@ -2,7 +2,9 @@
 App for creating rss feed by form in `/view`. Feed is located in `/feed/feed.xml`.
 
 ### View
-View is protected by basic apache password.
+There're two separate views.
+1. `/view/show` - It shows 1 post from the feed. It takes `t` param from url to identify correct post in feed.
+2. `/view/add` - Form creating new post in feed. It's protected by basic apache password.
 
 ## Installation
 1. Build css and js by gulpfile in `/view`

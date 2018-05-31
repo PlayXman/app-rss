@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Password Protected Area"
-AuthUserFile /home/users/playxman/graphic.4fan.cz/web/rss/view/.htpasswd
-Require valid-user

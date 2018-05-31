@@ -11,6 +11,8 @@ use SimpleXMLElement;
  */
 class Feed {
 
+	const VIEW_SHOW_URL = '/view/show/';
+
 	private $title;
 	private $link;
 	private $description;
@@ -27,7 +29,7 @@ class Feed {
 		$this->title       = $title;
 		$this->description = $description;
 		$this->pubDate     = date( 'r' );
-		$this->link        = HOME_LINK;
+		$this->link        = '';
 		$this->image       = '';
 	}
 
@@ -63,10 +65,18 @@ class Feed {
 	 * @return SimpleXMLElement
 	 */
 	private function createXmlItem() {
+		$timestamp = date( 'YmdHis' );
+
 		$item = new SimpleXMLElement( '<item />', LIBXML_NOCDATA );
 		$item->addChild( 'title', $this->title );
-		$item->addChild( 'guid', sprintf( '%s?t=%s', $this->link, date( 'YmdHis' ) ) );
-		$item->addChild( 'link', $this->link );
+		if ( empty( $this->link ) ) {
+			$linkWithTimestamp = sprintf( '%s%s?t=%s', HOME_LINK, self::VIEW_SHOW_URL, $timestamp );
+			$item->addChild( 'guid', $linkWithTimestamp );
+			$item->addChild( 'link', $linkWithTimestamp );
+		} else {
+			$item->addChild( 'guid', $this->link . $timestamp );
+			$item->addChild( 'link', $this->link );
+		}
 		$description = $item->addChild( 'description' );
 		$this->addCData( $description, html_entity_decode( $this->description ) . $this->image );
 		$item->addChild( 'pubDate', $this->pubDate );
